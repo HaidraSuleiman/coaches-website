@@ -2,7 +2,7 @@ import { createApp } from 'vue';
 import router from './router.js';
 import App from './App.vue';
 import store from './store/index.js';
-
+import dotenv from 'dotenv';
 import BaseCard from './components/layout/UI/BaseCard.vue';
 import BaseButton from './components/layout/UI/BaseButton.vue';
 import BaseBadge from './components/layout/UI/BaseBadge.vue';
@@ -11,6 +11,7 @@ import BaseDialog from './components/layout/UI/BaseDialog.vue';
 
 const app = createApp(App);
 
+dotenv.config();
 
 
 app.use(router);
