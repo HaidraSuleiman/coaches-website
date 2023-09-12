@@ -1,5 +1,5 @@
 let timer;
-const api_key = process.env.VUE_APP_APIKEY;
+
 export default {
     async login(context, payload) {
         return context.dispatch('auth', {
@@ -14,12 +14,12 @@ export default {
         });
     },
     async auth(context, payload) {
-
+        const api_key = process.env.VUE_APP_APIKEY;
         const mode = payload.mode;
-        let url = `https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=` + api_key;
+        let url = 'https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=' + api_key;
 
         if (mode === 'signup') {
-            url = `https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=` + api_key;
+            url = 'https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=' + api_key;
         }
 
         const response = await fetch(url, {
